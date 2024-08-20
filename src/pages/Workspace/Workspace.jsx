@@ -56,18 +56,11 @@ function Workspace() {
         } else {
             setIsChannelMenuActive(true);
         }
-        console.log(
-            'isChannelMenuArrowActive: ',
-            isChannelMenuArrowActive,
-            'isChannelMenuActive: ',
-            isChannelMenuActive
-        );
     }, [isChannelMenuArrowActive]);
 
     const handleSubmitMessage = (e, message) => {
         e.preventDefault();
         setNewMessageList([...newMessageList, message]);
-        console.log('Sent', message);
         saveMessage(id_workspace, id_channel, message);
     };
 
@@ -75,7 +68,6 @@ function Workspace() {
         e.preventDefault();
         channel.id = uuid();
         setNewChannel([...newChannel, channel]);
-        console.log('Saving channel', channel);
         saveChannel(id_workspace, channel);
     };
 

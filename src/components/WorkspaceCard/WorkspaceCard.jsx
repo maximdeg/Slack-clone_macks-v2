@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import './WorkspaceCard.css';
 
 function WorkspaceCard({ workspace }) {
-    console.log(Boolean(workspace.workspace_name.split(' ')[1]));
     return (
         <Link to={'/workspace/' + workspace.id + '/' + workspace.channels[0].id} className="workspace-card-link">
             <div className="workspace-card-container">

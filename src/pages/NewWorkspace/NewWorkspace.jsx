@@ -27,7 +27,6 @@ function NewWorkspace() {
             ...workspace,
             [e.target.name]: e.target.value,
         });
-        console.log(`${e.target.name}: ${e.target.value}`);
     };
 
     const handleChannelChange = (e) => {
@@ -44,7 +43,6 @@ function NewWorkspace() {
         e.preventDefault();
 
         setNewWorkspace([...newWorkspace, workspace]);
-        console.log('Saving workspace', workspace);
         createWorkspace(workspace);
         navigate('/');
     };
