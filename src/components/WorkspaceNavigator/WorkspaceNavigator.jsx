@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { BsFillPlusCircleFill } from 'react-icons/bs';
-import { RxCrossCircled } from 'react-icons/rx';
 
 import { useGlobalContext } from '../../context/GlobalContext';
 import './WorkspaceNavigator.css';
@@ -35,11 +34,8 @@ function WorkspaceNavigator(active) {
                 <Link to={'/workspace/new'} className="link">
                     <div className="plus-icon-container">
                         <BsFillPlusCircleFill />
-                        {/* <RxCrossCircled /> */}
                     </div>
                 </Link>
-
-                {/* <div className="workspace-squares user-pic"></div> */}
             </div>
         </div>
     );

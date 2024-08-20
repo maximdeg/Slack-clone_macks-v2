@@ -31,9 +31,3 @@
     height: 100vh;
     background-color: var(--bg-primary-color);
 }
-
-@media screen and (max-width: 768px) {
-    .root {
-        /* min-width: 300px; */
-    }  
-}
