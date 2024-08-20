@@ -27,6 +27,7 @@
     font-weight: 900;
     text-align: center;
     line-height: 1.5;
+    transition: 0.2s all;
 }
 
 .workspaces-navigator .workspace-squares-container::-webkit-scrollbar {
@@ -46,10 +47,12 @@
     font-size: 30px;
     cursor: pointer;
     color: var(--square-color);
+    transition: 0.2s all;
 }
 
 .workspaces-navigator .user-container .plus-icon-container:hover {
     color: var(--icon-color);
+    transform: scale(1.1);
 }
 
 .workspaces-navigator .user-container .workspace-squares .user-pic {
@@ -67,10 +70,17 @@
     height: 32px;
     background-color: var(--square-color);
     border-radius: 5px;
+    transition: 0.1s all;
 }
 
 .workspace-squares:hover {
     background-color: var(--icon-color);
+    transform: scale(1.1);
+}
+
+.workspace-squares.selected {
+    background-color: var(--icon-color);
+    transform: scale(1.2);
 }
 
 .link {

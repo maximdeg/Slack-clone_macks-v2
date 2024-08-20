@@ -1,17 +1,28 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import MessageCard from '../MessageCard/MessageCard';
 
 import './MessageList.css';
 
 function MessageList({ messages }) {
+    const messagesEndRef = useRef(messages);
+
+    useEffect(() => {
+        if (messagesEndRef.current) {
+            messagesEndRef.current.scrollTop = messagesEndRef.current.scrollHeight;
+        }
+    }, [messages]);
+
     return (
-        <div className="message-list-container">
-            {messages.map((message, index) => (
-                <div key={index}>
-                    <MessageCard message={message} />
-                </div>
-            ))}
-        </div>
+        <>
+            <div className="message-list-container" ref={messagesEndRef}>
+                {messages.map((message, index) => (
+                    <div key={index}>
+                        <MessageCard message={message} />
+                    </div>
+                ))}
+                <div ref={messagesEndRef}></div>
+            </div>
+        </>
     );
 }
 

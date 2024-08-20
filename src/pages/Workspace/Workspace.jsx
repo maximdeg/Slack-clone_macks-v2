@@ -75,7 +75,7 @@ function Workspace() {
         <>
             <Header workspace_name={workspace.workspace_name} />
             <section className="workspace-container">
-                <WorkspaceNavigator />
+                <WorkspaceNavigator selected={id_workspace} />
                 <div className="main">
                     <div className="main-navigator">
                         <div className="channel-navigator">
@@ -105,7 +105,10 @@ function Workspace() {
                             <h2># {currentChannel.channel_name}</h2>
                             {isChannelMenuArrowActive && (
                                 <div className="main-navigator responsive-main">
-                                    <WorkspaceNavigator active={isChannelMenuArrowActive} />
+                                    <WorkspaceNavigator
+                                        selected={id_workspace}
+                                        isResponsive={isChannelMenuArrowActive}
+                                    />
                                     <div className="channel-navigator">
                                         <div className="workspace-name-container">
                                             <h3>{workspace.workspace_name}</h3>
@@ -183,10 +186,10 @@ function AddChannelForm({ handleSubmitChannel, handleClick }) {
 
 function MessageInput({ handleSubmitMessage }) {
     const initialStateMessage = {
-        id: '',
-        date: new Date().toLocaleString(),
-        username: '',
-        image: '',
+        id: uuid(),
+        date: new Date(),
+        username: 'Maxim Degtiarev',
+        image: '/users/user-0.jpg',
         message: '',
     };
 
@@ -197,6 +200,7 @@ function MessageInput({ handleSubmitMessage }) {
             ...msgValue,
             [e.target.name]: e.target.value,
         });
+        console.log(new Date());
     };
 
     const handleClearInput = () => {

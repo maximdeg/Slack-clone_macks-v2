@@ -5,7 +5,7 @@ import { BsFillPlusCircleFill } from 'react-icons/bs';
 import { useGlobalContext } from '../../context/GlobalContext';
 import './WorkspaceNavigator.css';
 
-function WorkspaceNavigator(active) {
+function WorkspaceNavigator({ selected, isResponsive }) {
     const { getWorkspaces } = useGlobalContext();
     const workspaces = getWorkspaces();
 
@@ -16,7 +16,7 @@ function WorkspaceNavigator(active) {
                 to={'/workspace/' + workspace.id + '/' + workspace.channels[0].id}
                 className="link"
             >
-                <div className="workspace-squares">
+                <div className={workspace.id === selected ? 'workspace-squares selected' : 'workspace-squares'}>
                     <span className="initials-span">
                         {workspace.workspace_name[0].toUpperCase()}
                         {workspace.workspace_name.split(' ')[1] &&
@@ -28,7 +28,7 @@ function WorkspaceNavigator(active) {
     });
 
     return (
-        <div className={active.active === true ? 'workspaces-navigator inside-responsive' : 'workspaces-navigator'}>
+        <div className={isResponsive === true ? 'workspaces-navigator inside-responsive' : 'workspaces-navigator'}>
             <div className="workspace-squares-container">{WorkspacesNav}</div>
             <div className="user-container">
                 <Link to={'/workspace/new'} className="link">
