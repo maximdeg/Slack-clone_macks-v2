@@ -84,7 +84,6 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 100%;
     background-color: var(--bg-tertiary-color);
 }
 
@@ -109,6 +108,7 @@
     width: 90%;
     height: 180px;
     margin-top: 10px;
+    margin-bottom: 10px;
     padding: 15px 20px 15px 20px;
     border-radius: 7px;
     border: 1px solid var(--border-color);
@@ -236,6 +236,7 @@
 .workspace-container .chat-container .form-container .input-form {
     display: flex;
     position: relative;
+    z-index: 0;
     width: 100%;
     height: 100%;
 }
@@ -265,10 +266,13 @@
     background-color: transparent;
 }
 
+.main .channel-name-container .responsive-main {
+    display: none;
+}
+
 /* MEDIAQUERIES */
 
-@media (max-width: 1200px) {
-
+@media screen and (max-width: 1200px) {
     .workspace-container .main-navigator {
         display: none;
     }
@@ -282,7 +286,32 @@
     .workspace-container .chat-container .channel-name-container .arrow-triangle-container {
         display: flex;
     }
+
+    .main .channel-name-container .responsive-main {
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        z-index: 1;
+        left: 5px;
+        top: 92px;
+        width: 200px;
+        height: 484px;
+        border-top: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
+        border-right: 1px solid var(--border-color);
+        border-radius: 0px 5px 5px 0px;
+    }
+
+    .button {
+        font-size: 0.7em;
+    }
 }
+
+/* @media screen and (min-width: 1200px) {
+    .workspace-container .main-navigator {
+        display: flex;
+    }
+} */
 
 /* 
 @media screen and (max-width: 600px) {

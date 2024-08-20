@@ -3,8 +3,7 @@ import { v4 as uuid } from 'uuid';
 import { useParams } from 'react-router-dom';
 import { useGlobalContext } from '../../context/GlobalContext';
 import { IoSend } from 'react-icons/io5';
-import { GoTriangleRight } from "react-icons/go";
-
+import { GoTriangleRight } from 'react-icons/go';
 import Header from '../../components/Header/Header';
 import ChannelList from '../../components/ChannelList/ChannelList';
 import MessageList from '../../components/MessageList/MessageList';
@@ -31,24 +30,39 @@ function Workspace() {
     const [newMessageList, setNewMessageList] = useState(initialStateMessageList);
     const [newChannel, setNewChannel] = useState('');
 
-    const [isCreateChannelActive, setIsCreateChannelActive] = useState(false);
+    const [isCreateChannelButtonActive, setIsCreateChannelButtonActive] = useState(false);
     const [isFormChannelActive, setIsFormChannelActive] = useState(false);
 
+    const [isChannelMenuArrowActive, setIsChannelMenuArrowActive] = useState(false);
     const [isChannelMenuActive, setIsChannelMenuActive] = useState(false);
 
     function handleToggleForm() {
-        setIsCreateChannelActive(!isCreateChannelActive);
+        setIsCreateChannelButtonActive(!isCreateChannelButtonActive);
     }
 
     function handleToggleChannelMenu() {
-        setIsChannelMenuActive(!isChannelMenuActive);
+        setIsChannelMenuArrowActive(!isChannelMenuArrowActive);
     }
 
     useEffect(() => {
-        if (isCreateChannelActive) {
+        if (isCreateChannelButtonActive) {
             setIsFormChannelActive(false);
         }
-    }, [isCreateChannelActive]);
+    }, [isCreateChannelButtonActive]);
+
+    useEffect(() => {
+        if (isChannelMenuArrowActive) {
+            setIsChannelMenuActive(false);
+        } else {
+            setIsChannelMenuActive(true);
+        }
+        console.log(
+            'isChannelMenuArrowActive: ',
+            isChannelMenuArrowActive,
+            'isChannelMenuActive: ',
+            isChannelMenuActive
+        );
+    }, [isChannelMenuArrowActive]);
 
     const handleSubmitMessage = (e, message) => {
         e.preventDefault();
@@ -71,7 +85,7 @@ function Workspace() {
             <section className="workspace-container">
                 <WorkspaceNavigator />
                 <div className="main">
-                    <div className="main-navigator" style={ {display: isChannelMenuActive ? 'none' : 'block'} }>
+                    <div className="main-navigator">
                         <div className="channel-navigator">
                             <div className="workspace-name-container">
                                 <h3>{workspace.workspace_name}</h3>
@@ -83,7 +97,7 @@ function Workspace() {
                             <button className="button btn-create-channel" onClick={handleToggleForm}>
                                 Crear canal
                             </button>
-                            {isCreateChannelActive && (
+                            {isCreateChannelButtonActive && (
                                 <AddChannelForm
                                     handleSubmitChannel={handleSubmitChannel}
                                     handleClick={handleToggleForm}
@@ -97,6 +111,29 @@ function Workspace() {
                                 <GoTriangleRight className="arrow-triangle icon" />
                             </div>
                             <h2># {currentChannel.channel_name}</h2>
+                            {isChannelMenuArrowActive && (
+                                <div className="main-navigator responsive-main">
+                                    <WorkspaceNavigator active={isChannelMenuArrowActive} />
+                                    <div className="channel-navigator">
+                                        <div className="workspace-name-container">
+                                            <h3>{workspace.workspace_name}</h3>
+                                        </div>
+                                        <div className="channel-container">
+                                            <h4>Canales</h4>
+                                            <ChannelList id_workspace={id_workspace} channels={channels} />
+                                        </div>
+                                        <button className="button btn-create-channel" onClick={handleToggleForm}>
+                                            Crear canal
+                                        </button>
+                                        {isCreateChannelButtonActive && (
+                                            <AddChannelForm
+                                                handleSubmitChannel={handleSubmitChannel}
+                                                handleClick={handleToggleForm}
+                                            />
+                                        )}
+                                    </div>
+                                </div>
+                            )}
                         </div>
                         <MessageList messages={currentChannel.messages} />
                         <MessageInput handleSubmitMessage={handleSubmitMessage} />

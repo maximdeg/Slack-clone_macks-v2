@@ -6,7 +6,7 @@ import { RxCrossCircled } from 'react-icons/rx';
 import { useGlobalContext } from '../../context/GlobalContext';
 import './WorkspaceNavigator.css';
 
-function WorkspaceNavigator() {
+function WorkspaceNavigator(active) {
     const { getWorkspaces } = useGlobalContext();
     const workspaces = getWorkspaces();
 
@@ -29,7 +29,7 @@ function WorkspaceNavigator() {
     });
 
     return (
-        <div className="workspaces-navigator">
+        <div className={active.active === true ? 'workspaces-navigator inside-responsive' : 'workspaces-navigator'}>
             <div className="workspace-squares-container">{WorkspacesNav}</div>
             <div className="user-container">
                 <Link to={'/workspace/new'} className="link">
