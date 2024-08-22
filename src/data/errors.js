@@ -1,3 +1,5 @@
+import { workspaceAlreadyExists } from '../handlers/handleWorkspaces';
+
 const validateWorkspaceLength = (value) => {
     return value.length > 5;
 };
@@ -24,20 +26,14 @@ export const ERRORS = {
         validate: validateChannelLength,
     },
     EMPTY_FIELD: {
-        message: '*Por favor rellena este campo',
+        message: '*Por favor rellena todos los campos',
         id: 3,
-        validate: validateEmptyFields,
-    },
-    CHANNEL_ALREADY_EXISTS: {
-        message: '*Ya existe un canal con este nombre',
-        id: 4,
-        property: 'channel_name',
         validate: validateEmptyFields,
     },
     WORKSPACE_ALREADY_EXISTS: {
         message: '*Ya existe un workspace con este nombre',
-        id: 5,
+        id: 4,
         property: 'workspace_name',
-        validate: validateEmptyFields,
+        validate: workspaceAlreadyExists,
     },
 };

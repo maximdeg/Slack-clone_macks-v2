@@ -1,5 +1,6 @@
 import { ERRORS } from '../data/errors';
 
+
 const handleErrors = (from, value) => {
     for (const key in ERRORS) {
         if (ERRORS[key].property === from) {
@@ -18,6 +19,5 @@ export const validateForm = (from, value) => {
         errors = handleErrors(from, value);
     }
 
-    console.log('Validate form', errors);
     return errors;
 };

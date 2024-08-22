@@ -1,6 +1,5 @@
 import { getWorkspaceById, getWorkspaces, saveToLocalStorage } from './handleWorkspaces';
 
-
 /**
  * Returns the channel with the given idChannel from the workspace with the given idWorkspace.
  * @param {string} idWorkspace - The id of the workspace to search in.
@@ -33,3 +32,4 @@ export const saveChannel = (idWorkspace, channel) => {
     workspaces[workspaceIndex].channels.push(channel);
     saveToLocalStorage(workspaces);
 };
+

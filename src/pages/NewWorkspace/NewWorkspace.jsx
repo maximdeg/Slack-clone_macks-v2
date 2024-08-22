@@ -47,14 +47,31 @@ function NewWorkspace() {
         const newChannelError = validateForm('channel_name', workspace.channels[1].channel_name);
         console.log(newWorkspaceError, newChannelError);
 
-        if (!newWorkspaceError && !newChannelError) {
+        // if (!newWorkspaceError && !newChannelError) {
+        //     setNewWorkspace([...newWorkspace, workspace]);
+        //     createWorkspace(workspace);
+        //     navigate('/');
+        // } else if (newWorkspaceError) {
+        //     setError((prevState) => newWorkspaceError);
+        // } else {
+        //     setError((prevState) => newChannelError);
+        // }
+
+        if (newWorkspaceError) {
+            setError((prevState) => newWorkspaceError);
+        } else if (newChannelError) {
+            if (newChannelError.id === 3) {
+                workspace.channels.splice(-1, 1);
+                setNewWorkspace([...newWorkspace, workspace]);
+                createWorkspace(workspace);
+                navigate('/');
+            } else {
+                setError((prevState) => newChannelError);
+            }
+        } else {
             setNewWorkspace([...newWorkspace, workspace]);
             createWorkspace(workspace);
             navigate('/');
-        } else if (newWorkspaceError) {
-            setError((prevState) => newWorkspaceError);
-        } else {
-            setError((prevState) => newChannelError);
         }
     };
 

@@ -52,8 +52,6 @@ export const deleteWorkspaceById = (id) => {
     saveToLocalStorage(workspaces);
 };
 
-
-
 /**
  * Returns the workspace with the given id, or undefined if it is not found.
  *
@@ -63,4 +61,19 @@ export const deleteWorkspaceById = (id) => {
 export const getWorkspaceById = (id) => {
     const workspaces = getWorkspaces();
     return workspaces.find((workspace) => workspace.id === id);
+};
+
+
+/**
+ * Checks if a workspace with the given name already exists in the array of workspaces.
+ * Returns true if no workspace with the given name exists, and false otherwise.
+ *
+ * @param {string} workspaceName - The name of the workspace to check for.
+ * @return {boolean} True if no workspace with the given name exists, false otherwise.
+ */
+export const workspaceAlreadyExists = (workspaceName) => {
+    const workspaces = getWorkspaces();
+    return !Boolean(
+        workspaces.find((workspace) => workspace.workspace_name.toLowerCase() === workspaceName.toLowerCase())
+    );
 };

@@ -1,7 +1,6 @@
 import { getChannelById } from '../handlers/handleChannels.js';
 import { getWorkspaces, saveToLocalStorage } from './handleWorkspaces.js';
 
-
 /**
  * Returns the messages from a channel.
  *
@@ -11,6 +10,7 @@ import { getWorkspaces, saveToLocalStorage } from './handleWorkspaces.js';
  */
 export const getMessagesFromChannel = (workspaceId, channelId) => {
     const [channel] = getChannelById(workspaceId, channelId);
+    if (!channel) return [];
     return channel.messages;
 };
 

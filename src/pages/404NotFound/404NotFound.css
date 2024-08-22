@@ -1,0 +1,55 @@
+.not-found-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 150px;
+    gap: 20px;
+    padding: 30px;
+    margin: 50px;
+    height: 100%;
+}
+
+.not-found-container h1 {
+    color: var(--text-primary-color);
+    font-size: 50px;
+    text-wrap: pretty;
+    text-align: center;
+}
+
+.not-found-link {
+    color: var(--text-primary-color);
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+.rotating-logo {
+    width: 80px;
+    height: 80px;
+    -webkit-animation: spin 1s linear infinite;
+    -moz-animation: spin is linear infinite;
+    animation: spin 20s linear infinite;
+}
+
+.rotating-logo img {
+    width: 100%;
+    border-radius: 50px;
+}
+/*use keyframes*/
+@-webkit-keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
