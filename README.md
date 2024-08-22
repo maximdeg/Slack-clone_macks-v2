@@ -14,6 +14,7 @@ npm install
 
 ## What was used to make this happen
 
+Vite para desplegar el proyecto
 [React Icons](https://react-icons.github.io/react-icons/) para todos los iconos que estan a la vista
 [JSON Generator](https://json-generator.com/#) me ayudo con la generacion random de contenido JSON
 React-Router-Dom es el principal enrutador
