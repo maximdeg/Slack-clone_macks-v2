@@ -20,14 +20,29 @@ function Header({ workspace_name }) {
                     </div>
                 </Link>
                 <nav className="navigator">
-                    <button className="btn-navigation">
+                    <button className="btn-navigation btn-arrow-left">
                         <HiArrowLeft />
+                        <div className="hidden-container">
+                            <span className="hidden-span">
+                                Este boton no funciona, esta para volver al canal anterior.
+                            </span>
+                        </div>
                     </button>
-                    <button className="btn-navigation">
+                    <button className="btn-navigation btn-arrow-right">
                         <HiArrowRight />
+                        <div className="hidden-container ">
+                            <span className="hidden-span">
+                                Este boton vuelve a donde estabas si vas para atras, pero no funciona.
+                            </span>
+                        </div>
                     </button>
-                    <button className="btn-navigation">
+                    <button className="btn-navigation btn-watch">
                         <IoTimeOutline className="icon-watch" />
+                        <div className="hidden-container">
+                            <span className="hidden-span">
+                                Con este boton vas a ver el historial de los canales que estuviste, pero no ahora.
+                            </span>
+                        </div>
                     </button>
                 </nav>
             </div>
@@ -41,6 +56,11 @@ function Header({ workspace_name }) {
                 <div className="container info-container">
                     <button className="btn-navigation">
                         <RxQuestionMarkCircled className="info-icon" />
+                        <div className="hidden-container">
+                            <span className="hidden-span">
+                                Este boton no funciona, disculpe las molestias, pronto funcionara, algun dia...
+                            </span>
+                        </div>
                     </button>
                 </div>
             </div>

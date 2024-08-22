@@ -3,7 +3,17 @@ import { v4 as uuid } from 'uuid';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useGlobalContext } from '../../context/GlobalContext';
 import { IoSend } from 'react-icons/io5';
-import { GoTriangleRight } from 'react-icons/go';
+import { GoTriangleRight, GoBold, GoItalic, GoListUnordered, GoPlusCircle  } from 'react-icons/go';
+import { FaStrikethrough, FaCode, FaAt } from 'react-icons/fa';
+import { FaLink } from 'react-icons/fa6';
+import { RiListOrdered2 } from 'react-icons/ri';
+import { TbBlockquote } from 'react-icons/tb';
+import { PiCodeBlockBold } from 'react-icons/pi';
+import { RxLetterCaseCapitalize } from "react-icons/rx";
+import { BsEmojiSmile } from "react-icons/bs";
+
+
+
 import Header from '../../components/Header/Header';
 import ChannelList from '../../components/ChannelList/ChannelList';
 import MessageList from '../../components/MessageList/MessageList';
@@ -265,7 +275,46 @@ function MessageInput({ handleSubmitMessage }) {
                     value={msgValue.message}
                     placeholder="Escribe aqui un mensaje..."
                 ></input>
-                <button className="btn-submit" type="submit">
+                <div className="top-buttons">
+                    <div className="top-buttons-container">
+                        <button className="icon-button">
+                            <GoBold />
+                        </button>
+                        <button className="icon-button">
+                            <GoItalic />
+                        </button>
+                        <button className="icon-button">
+                            <FaStrikethrough />
+                        </button>
+                    </div>
+                    <div className="top-buttons-container">
+                        <button className="icon-button">
+                            <FaLink />
+                        </button>
+                    </div>
+                    <div className="top-buttons-container">
+                        <button className="icon-button">
+                            <RiListOrdered2 />
+                        </button>
+                        <button className="icon-button">
+                            <GoListUnordered />
+                        </button>
+                    </div>
+                    <div className="top-buttons-container">
+                        <button className="icon-button">
+                            <TbBlockquote />
+                        </button>
+                    </div>
+                    <div className="top-buttons-container">
+                        <button className="icon-button">
+                            <FaCode />
+                        </button>
+                        <button className="icon-button">
+                            <PiCodeBlockBold />
+                        </button>
+                    </div>
+                </div>
+                <button className="btn-submit icon-button" type="submit">
                     <IoSend />
                 </button>
             </form>
