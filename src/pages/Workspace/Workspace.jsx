@@ -87,9 +87,13 @@ function Workspace() {
 
     const handleDeleteChannel = (e, channel_id) => {
         e.preventDefault();
-        setNewChannel((prevState) => channels);
-        deleteChannel(id_workspace, channel_id);
-        navigate('/workspace/' + id_workspace + '/' + workspace.channels[0].id);
+        if (channels.length > 1) {
+            setNewChannel((prevState) => channels);
+            deleteChannel(id_workspace, channel_id);
+            navigate('/workspace/' + id_workspace + '/' + workspace.channels[0].id);
+        } else {
+            alert('Por favor no elimine el ultimo canal');
+        }
     };
 
     return (
