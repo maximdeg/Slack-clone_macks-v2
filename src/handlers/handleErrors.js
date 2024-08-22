@@ -5,7 +5,6 @@ const handleErrors = (from, value) => {
     for (const key in ERRORS) {
         if (ERRORS[key].property === from) {
             if (!ERRORS[key].validate(value)) {
-                console.log('ERRORS', from, value);
                 return ERRORS[key];
             }
         }

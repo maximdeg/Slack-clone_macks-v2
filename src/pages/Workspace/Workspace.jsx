@@ -84,7 +84,6 @@ function Workspace() {
         e.preventDefault();
 
         const newError = validateForm('channel_name', channel.channel_name);
-        console.log(newError);
 
         if (!newError) {
             channel.id = uuid();
@@ -251,7 +250,6 @@ function MessageInput({ handleSubmitMessage }) {
             ...msgValue,
             [e.target.name]: e.target.value,
         });
-        console.log(new Date());
     };
 
     const handleClearInput = () => {

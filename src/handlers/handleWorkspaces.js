@@ -1,4 +1,4 @@
-import { WORKSPACES } from '../data/workspaces.json';
+import { WORKSPACES } from '../data/workspaces-v2.json';
 
 /**
  * @function getWorkspaces
@@ -62,7 +62,6 @@ export const getWorkspaceById = (id) => {
     const workspaces = getWorkspaces();
     return workspaces.find((workspace) => workspace.id === id);
 };
-
 
 /**
  * Checks if a workspace with the given name already exists in the array of workspaces.
