@@ -3,7 +3,7 @@ import { v4 as uuid } from 'uuid';
 import { useParams } from 'react-router-dom';
 import { useGlobalContext } from '../../context/GlobalContext';
 import { IoSend } from 'react-icons/io5';
-import { GoTriangleRight } from 'react-icons/go';
+import { GoTriangleRight, GoTriangleUp } from 'react-icons/go';
 import Header from '../../components/Header/Header';
 import ChannelList from '../../components/ChannelList/ChannelList';
 import MessageList from '../../components/MessageList/MessageList';
@@ -113,7 +113,11 @@ function Workspace() {
                     <div className="chat-container">
                         <div className="channel-name-container">
                             <div className="arrow-triangle-container" onClick={handleToggleChannelMenu}>
-                                <GoTriangleRight className="arrow-triangle icon" />
+                                {isChannelMenuArrowActive ? (
+                                    <GoTriangleRight className="arrow-triangle-down icon icon-rotated" />
+                                ) : (
+                                    <GoTriangleRight className="arrow-triangle-down icon" />
+                                )}
                             </div>
                             <h2># {currentChannel.channel_name}</h2>
                             {isChannelMenuArrowActive && (

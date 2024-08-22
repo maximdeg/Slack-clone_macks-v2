@@ -223,9 +223,13 @@
     border: 1px solid var(--border-color);
 }
 
-/* .workspace-container .chat-container .channel-name-container .arrow-triangle-container .arrow-triangle {
-    -webkit-transition: -webkit-transform 1s;
-    } */
+.workspace-container .chat-container .channel-name-container .arrow-triangle-container .icon {
+    transition: all 0.3s ease;
+}
+
+.workspace-container .chat-container .channel-name-container .arrow-triangle-container .icon.icon-rotated {
+    transform: rotate(90deg);
+}
 
 /* MESSAGE INPUT CONTAINER */
 
