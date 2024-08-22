@@ -2,17 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { v4 as uuid } from 'uuid';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useGlobalContext } from '../../context/GlobalContext';
-import { IoSend } from 'react-icons/io5';
-import { GoTriangleRight, GoBold, GoItalic, GoListUnordered, GoPlusCircle  } from 'react-icons/go';
+import { IoSend, IoMicOutline } from 'react-icons/io5';
+import { GoTriangleRight, GoBold, GoItalic, GoListUnordered, GoPlusCircle } from 'react-icons/go';
 import { FaStrikethrough, FaCode, FaAt } from 'react-icons/fa';
 import { FaLink } from 'react-icons/fa6';
 import { RiListOrdered2 } from 'react-icons/ri';
 import { TbBlockquote } from 'react-icons/tb';
 import { PiCodeBlockBold } from 'react-icons/pi';
-import { RxLetterCaseCapitalize } from "react-icons/rx";
-import { BsEmojiSmile } from "react-icons/bs";
-
-
+import { RxLetterCaseCapitalize } from 'react-icons/rx';
+import { BsEmojiSmile, BsCameraVideo } from 'react-icons/bs';
+import { CgShortcut } from 'react-icons/cg';
 
 import Header from '../../components/Header/Header';
 import ChannelList from '../../components/ChannelList/ChannelList';
@@ -75,8 +74,10 @@ function Workspace() {
 
     const handleSubmitMessage = (e, message) => {
         e.preventDefault();
-        setNewMessageList([...newMessageList, message]);
-        saveMessage(id_workspace, id_channel, message);
+        if (message.message !== '' && message.message !== undefined && message.message !== null) {
+            setNewMessageList([...newMessageList, message]);
+            saveMessage(id_workspace, id_channel, message);
+        }
     };
 
     const handleSubmitChannel = (e, channel) => {
@@ -276,7 +277,7 @@ function MessageInput({ handleSubmitMessage }) {
                     placeholder="Escribe aqui un mensaje..."
                 ></input>
                 <div className="top-buttons">
-                    <div className="top-buttons-container">
+                    <div className="buttons-container">
                         <button className="icon-button">
                             <GoBold />
                         </button>
@@ -287,12 +288,12 @@ function MessageInput({ handleSubmitMessage }) {
                             <FaStrikethrough />
                         </button>
                     </div>
-                    <div className="top-buttons-container">
+                    <div className="buttons-container">
                         <button className="icon-button">
                             <FaLink />
                         </button>
                     </div>
-                    <div className="top-buttons-container">
+                    <div className="buttons-container">
                         <button className="icon-button">
                             <RiListOrdered2 />
                         </button>
@@ -300,17 +301,46 @@ function MessageInput({ handleSubmitMessage }) {
                             <GoListUnordered />
                         </button>
                     </div>
-                    <div className="top-buttons-container">
+                    <div className="buttons-container">
                         <button className="icon-button">
                             <TbBlockquote />
                         </button>
                     </div>
-                    <div className="top-buttons-container">
+                    <div className="buttons-container">
                         <button className="icon-button">
                             <FaCode />
                         </button>
                         <button className="icon-button">
                             <PiCodeBlockBold />
+                        </button>
+                    </div>
+                </div>
+                <div className="bottom-buttons">
+                    <div className="buttons-container">
+                        <button className="icon-button">
+                            <GoPlusCircle />
+                        </button>
+                        <button className="icon-button">
+                            <RxLetterCaseCapitalize />
+                        </button>
+                        <button className="icon-button">
+                            <BsEmojiSmile />
+                        </button>
+                        <button className="icon-button">
+                            <FaAt />
+                        </button>
+                    </div>
+                    <div className="buttons-container">
+                        <button className="icon-button">
+                            <BsCameraVideo />
+                        </button>
+                        <button className="icon-button">
+                            <IoMicOutline />
+                        </button>
+                    </div>
+                    <div className="buttons-container">
+                        <button className="icon-button">
+                            <CgShortcut />
                         </button>
                     </div>
                 </div>
