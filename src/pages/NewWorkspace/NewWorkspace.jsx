@@ -34,8 +34,8 @@ function NewWorkspace() {
         setWorkspace({
             ...workspace,
             channels: [
-                { channel_name: 'General', messages: [], id: uuid() },
-                { channel_name: e.target.value, messages: [], id: uuid() },
+                { channel_name: 'General', messages: [], id: '' },
+                { channel_name: e.target.value, messages: [], id: '' },
             ],
         });
     };
@@ -45,23 +45,13 @@ function NewWorkspace() {
 
         const newWorkspaceError = validateForm('workspace_name', workspace.workspace_name);
         const newChannelError = validateForm('channel_name', workspace.channels[1].channel_name);
-        console.log(newWorkspaceError, newChannelError);
-
-        // if (!newWorkspaceError && !newChannelError) {
-        //     setNewWorkspace([...newWorkspace, workspace]);
-        //     createWorkspace(workspace);
-        //     navigate('/');
-        // } else if (newWorkspaceError) {
-        //     setError((prevState) => newWorkspaceError);
-        // } else {
-        //     setError((prevState) => newChannelError);
-        // }
 
         if (newWorkspaceError) {
             setError((prevState) => newWorkspaceError);
         } else if (newChannelError) {
             if (newChannelError.id === 3) {
                 workspace.channels.splice(-1, 1);
+                workspace.channels[0].id = uuid();
                 setNewWorkspace([...newWorkspace, workspace]);
                 createWorkspace(workspace);
                 navigate('/');
@@ -69,6 +59,8 @@ function NewWorkspace() {
                 setError((prevState) => newChannelError);
             }
         } else {
+            workspace.channels[0].id = uuid();
+            workspace.channels[1].id = uuid();
             setNewWorkspace([...newWorkspace, workspace]);
             createWorkspace(workspace);
             navigate('/');
