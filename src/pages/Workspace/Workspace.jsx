@@ -17,9 +17,10 @@ function Workspace() {
         getChannelsFromWorkspace,
         getWorkspaceById,
         getChannelById,
-        saveMessage,
         getMessagesFromChannel,
+        saveMessage,
         saveChannel,
+        validateForm,
     } = useGlobalContext();
 
     const workspace = getWorkspaceById(id_workspace);
@@ -29,6 +30,8 @@ function Workspace() {
     const initialStateMessageList = getMessagesFromChannel(id_workspace, id_channel);
     const [newMessageList, setNewMessageList] = useState(initialStateMessageList);
     const [newChannel, setNewChannel] = useState('');
+
+    const [error, setError] = useState(null);
 
     const [isCreateChannelButtonActive, setIsCreateChannelButtonActive] = useState(false);
     const [isFormChannelActive, setIsFormChannelActive] = useState(false);
@@ -66,9 +69,18 @@ function Workspace() {
 
     const handleSubmitChannel = (e, channel) => {
         e.preventDefault();
-        channel.id = uuid();
-        setNewChannel([...newChannel, channel]);
-        saveChannel(id_workspace, channel);
+
+        const newError = validateForm('channel_name', channel.channel_name);
+        console.log(newError);
+
+        if (!newError) {
+            channel.id = uuid();
+            setNewChannel([...newChannel, channel]);
+            saveChannel(id_workspace, channel);
+            handleToggleForm();
+        } else {
+            setError((prevState) => newError);
+        }
     };
 
     return (
@@ -92,7 +104,8 @@ function Workspace() {
                             {isCreateChannelButtonActive && (
                                 <AddChannelForm
                                     handleSubmitChannel={handleSubmitChannel}
-                                    handleClick={handleToggleForm}
+                                    handleToggleForm={handleToggleForm}
+                                    error={error}
                                 />
                             )}
                         </div>
@@ -123,7 +136,8 @@ function Workspace() {
                                         {isCreateChannelButtonActive && (
                                             <AddChannelForm
                                                 handleSubmitChannel={handleSubmitChannel}
-                                                handleClick={handleToggleForm}
+                                                handleToggleForm={handleToggleForm}
+                                                error={error}
                                             />
                                         )}
                                     </div>
@@ -139,7 +153,7 @@ function Workspace() {
     );
 }
 
-function AddChannelForm({ handleSubmitChannel, handleClick }) {
+function AddChannelForm({ handleSubmitChannel, handleToggleForm, error }) {
     const initialStateChannel = {
         id: '',
         channel_name: '',
@@ -171,8 +185,9 @@ function AddChannelForm({ handleSubmitChannel, handleClick }) {
                     value={channelValue.name}
                     placeholder="Nuevo canal..."
                 />
+                {error && <span className="error">{error.message}</span>}
                 <div className="btn-container">
-                    <button className="button btn-create btn-cancel-channel" type="cancel" onClick={handleClick}>
+                    <button className="button btn-create btn-cancel-channel" type="cancel" onClick={handleToggleForm}>
                         Cancelar
                     </button>
                     <button className="button btn-create btn-confirm-channel" type="submit">

@@ -2,6 +2,7 @@ import { createContext, useState, useContext, useEffect } from 'react';
 import { getWorkspaces, getWorkspaceById, createWorkspace } from '../handlers/handleWorkspaces.js';
 import { getChannelsFromWorkspace, getChannelById, saveChannel } from '../handlers/handleChannels.js';
 import { saveMessage, getMessagesFromChannel } from '../handlers/handleMessages.js';
+import { validateForm } from '../handlers/handleErrors.js';
 
 const GlobalContext = createContext();
 
@@ -14,10 +15,11 @@ const GlobalContextProvider = ({ children }) => {
                 getChannelsFromWorkspace,
                 getChannelById,
                 getWorkspaceById,
-                saveMessage,
                 getMessagesFromChannel,
+                saveMessage,
                 saveChannel,
                 createWorkspace,
+                validateForm
             }}
         >
             {children}

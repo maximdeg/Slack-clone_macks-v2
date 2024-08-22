@@ -143,6 +143,11 @@
     background-color: var(--bg-tertiary-color);
 }
 
+.error {
+    color: rgb(255, 94, 94);
+    font-size: 10px;
+}
+
 .workspace-container
     .main-navigator
     .channel-navigator
@@ -218,6 +223,10 @@
     border: 1px solid var(--border-color);
 }
 
+/* .workspace-container .chat-container .channel-name-container .arrow-triangle-container .arrow-triangle {
+    -webkit-transition: -webkit-transform 1s;
+    } */
+
 /* MESSAGE INPUT CONTAINER */
 
 .workspace-container .chat-container .form-container {
@@ -285,6 +294,23 @@
 
     .workspace-container .chat-container .channel-name-container .arrow-triangle-container {
         display: flex;
+        transition: 0.9s;
+    }
+
+    .workspace-container .chat-container .channel-name-container .arrow-triangle-container:focus {
+        /* transform: rotate(90deg); */
+        animation: rotateArrow 0.9s linear;
+        /* -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg); */
+    }
+
+    @keyframes rotateArrow {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(90deg);
+        }
     }
 
     .main .channel-name-container .responsive-main {

@@ -8,7 +8,7 @@ import { useGlobalContext } from '../../context/GlobalContext';
 import './NewWorkspace.css';
 
 function NewWorkspace() {
-    const { createWorkspace, getWorkspaces } = useGlobalContext();
+    const { createWorkspace, getWorkspaces, validateForm } = useGlobalContext();
     const [newWorkspace, setNewWorkspace] = useState(getWorkspaces());
 
     const navigate = useNavigate();
@@ -21,6 +21,7 @@ function NewWorkspace() {
         ],
     };
     const [workspace, setWorkspace] = useState(initialStateWorkspace);
+    const [error, setError] = useState(null);
 
     const handleWorkspaceChange = (e) => {
         setWorkspace({
@@ -42,9 +43,19 @@ function NewWorkspace() {
     const handleSubmitWorkspace = (e) => {
         e.preventDefault();
 
-        setNewWorkspace([...newWorkspace, workspace]);
-        createWorkspace(workspace);
-        navigate('/');
+        const newWorkspaceError = validateForm('workspace_name', workspace.workspace_name);
+        const newChannelError = validateForm('channel_name', workspace.channels[1].channel_name);
+        console.log(newWorkspaceError, newChannelError);
+
+        if (!newWorkspaceError && !newChannelError) {
+            setNewWorkspace([...newWorkspace, workspace]);
+            createWorkspace(workspace);
+            navigate('/');
+        } else if (newWorkspaceError) {
+            setError((prevState) => newWorkspaceError);
+        } else {
+            setError((prevState) => newChannelError);
+        }
     };
 
     return (
@@ -88,6 +99,7 @@ function NewWorkspace() {
                                 <span>*Por defecto se va a crear un canal #General aun si no completa este campo</span>
                             </div>
                         </div>
+                        {error && <div className="error">{error.message}</div>}
                         <div className="container buttons-container_container">
                             <Link to={'/'}>
                                 <button className="button btn-cancel-workspace">Cancelar</button>
