@@ -111,7 +111,7 @@ function NewWorkspace() {
                         {error && <div className="error">{error.message}</div>}
                         <div className="container buttons-container_container">
                             <Link to={'/'}>
-                                <button className="button btn-cancel-workspace">Cancelar</button>
+                                <button className="button btn-cancel">Cancelar</button>
                             </Link>
                             <button type="submit" className="button btn-create-workspace">
                                 Crear

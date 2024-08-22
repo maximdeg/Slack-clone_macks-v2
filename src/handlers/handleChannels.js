@@ -33,3 +33,15 @@ export const saveChannel = (idWorkspace, channel) => {
     saveToLocalStorage(workspaces);
 };
 
+
+/**
+ * Deletes a channel from the workspace with the given idWorkspace.
+ * @param {string} idWorkspace - The id of the workspace to delete the channel from.
+ * @param {string} idChannel - The id of the channel to delete.
+ */
+export const deleteChannel = (idWorkspace, idChannel) => {
+    const workspaces = getWorkspaces();
+    const workspaceIndex = workspaces.findIndex((workspace) => workspace.id === idWorkspace);
+    workspaces[workspaceIndex].channels = workspaces[workspaceIndex].channels.filter((channel) => channel.id !== idChannel);
+    saveToLocalStorage(workspaces);
+};

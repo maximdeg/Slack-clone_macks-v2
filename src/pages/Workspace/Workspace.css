@@ -88,6 +88,11 @@
     background-color: var(--bg-tertiary-color);
 }
 
+.btn-cancel {
+    /* box-shadow: inset 0px 0px 0px 3px rgba(255, 41, 41, 1); */
+    background-color: rgba(255, 41, 41, 0.815);
+}
+
 .btn-create-channel {
     display: inline-block;
     align-self: center;

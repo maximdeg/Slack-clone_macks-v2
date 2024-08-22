@@ -14,6 +14,7 @@
     --text-primary-color: #acacad;
     --text-secondary-color: white;
     --border-color: #6159599a;
+    --error-color: rgba(255, 41, 41, 0.815);
 }
 
 * {

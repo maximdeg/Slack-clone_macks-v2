@@ -9,16 +9,34 @@
 .channel {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
     height: 25px;
     padding: 10px;
     color: var(--text-primary-color);
 }
 
+.channel .btn-delete-channel {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--error-color);
+}
+
 .channel:hover {
     border-radius: 5px;
     background-color: var(--bg-tertiary-color);
     color: var(--text-secondary-color);
+}
+
+.channel:hover .btn-delete-channel {
+    display: flex;
 }
 
 .channel.selected {

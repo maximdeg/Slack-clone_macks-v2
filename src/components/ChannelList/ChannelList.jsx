@@ -1,9 +1,11 @@
 import React from 'react';
+import { useGlobalContext } from '../../context/GlobalContext';
 import { Link, useParams } from 'react-router-dom';
+import { ImBin2 } from 'react-icons/im';
 
 import './ChannelList.css';
 
-function ChannelList({ id_workspace, channels }) {
+function ChannelList({ id_workspace, channels, handleDeleteChannel }) {
     const { id_channel } = useParams();
 
     return (
@@ -17,6 +19,9 @@ function ChannelList({ id_workspace, channels }) {
                         className={channel.id === id_channel ? 'channel selected' : 'channel'}
                     >
                         {`# ${channel.channel_name}`}
+                        <button className="btn-delete-channel" onClick={(e) => handleDeleteChannel(e, channel.id)}>
+                            <ImBin2 />
+                        </button>
                     </div>
                 </Link>
             ))}

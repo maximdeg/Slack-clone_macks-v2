@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { v4 as uuid } from 'uuid';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useGlobalContext } from '../../context/GlobalContext';
 import { IoSend } from 'react-icons/io5';
-import { GoTriangleRight, GoTriangleUp } from 'react-icons/go';
+import { GoTriangleRight } from 'react-icons/go';
 import Header from '../../components/Header/Header';
 import ChannelList from '../../components/ChannelList/ChannelList';
 import MessageList from '../../components/MessageList/MessageList';
@@ -20,11 +20,13 @@ function Workspace() {
         getMessagesFromChannel,
         saveMessage,
         saveChannel,
+        deleteChannel,
         validateForm,
     } = useGlobalContext();
 
     const workspace = getWorkspaceById(id_workspace);
     const channels = getChannelsFromWorkspace(id_workspace);
+    const navigate = useNavigate();
 
     const [currentChannel] = getChannelById(id_workspace, id_channel);
     const initialStateMessageList = getMessagesFromChannel(id_workspace, id_channel);
@@ -83,6 +85,13 @@ function Workspace() {
         }
     };
 
+    const handleDeleteChannel = (e, channel_id) => {
+        e.preventDefault();
+        setNewChannel((prevState) => channels);
+        deleteChannel(id_workspace, channel_id);
+        navigate('/workspace/' + id_workspace + '/' + workspace.channels[0].id);
+    };
+
     return (
         <>
             <Header workspace_name={workspace.workspace_name} />
@@ -96,7 +105,11 @@ function Workspace() {
                             </div>
                             <div className="channel-container">
                                 <h4>Canales</h4>
-                                <ChannelList id_workspace={id_workspace} channels={channels} />
+                                <ChannelList
+                                    id_workspace={id_workspace}
+                                    channels={channels}
+                                    handleDeleteChannel={handleDeleteChannel}
+                                />
                             </div>
                             <button className="button btn-create-channel" onClick={handleToggleForm}>
                                 Crear canal
@@ -132,7 +145,11 @@ function Workspace() {
                                         </div>
                                         <div className="channel-container">
                                             <h4>Canales</h4>
-                                            <ChannelList id_workspace={id_workspace} channels={channels} />
+                                            <ChannelList
+                                                id_workspace={id_workspace}
+                                                channels={channels}
+                                                handleDeleteChannel={handleDeleteChannel}
+                                            />
                                         </div>
                                         <button className="button btn-create-channel" onClick={handleToggleForm}>
                                             Crear canal
@@ -191,7 +208,7 @@ function AddChannelForm({ handleSubmitChannel, handleToggleForm, error }) {
                 />
                 {error && <span className="error">{error.message}</span>}
                 <div className="btn-container">
-                    <button className="button btn-create btn-cancel-channel" type="cancel" onClick={handleToggleForm}>
+                    <button className="button btn-create btn-cancel" type="cancel" onClick={handleToggleForm}>
                         Cancelar
                     </button>
                     <button className="button btn-create btn-confirm-channel" type="submit">
