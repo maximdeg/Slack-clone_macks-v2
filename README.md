@@ -14,17 +14,21 @@ npm install
 
 ## What was used to make this happen
 
-Vite para desplegar el proyecto
-[React Icons](https://react-icons.github.io/react-icons/) para todos los iconos que estan a la vista
-[JSON Generator](https://json-generator.com/#) me ayudo con la generacion random de contenido JSON
-React-Router-Dom es el principal enrutador
+Vite para desplegar el proyecto.
+
+React-Router-Dom es el principal enrutador.
+
+[React Icons](https://react-icons.github.io/react-icons/) para todos los iconos que estan a la vista.
+
+[JSON Generator](https://json-generator.com/#) me ayudo con la generacion random de contenido JSON.
 
 El resto del codigo fue hecho a mano en CSS, JavaSript y React.
 
 ## The most difficult situations
 
-Lo mas dificil fue hacer responsivo la pagina donde esta el workspace y poder ocultarlo y para cuando hay que desplegarlo se vea mas o menos decente. Eso fue lo que me llevo mas tiempo... y que la pequeña flechita girara de forma suave y que vuelva a su posision inicial. 
-Muchas cosas fui agregando sin tenerlo planeado. Por eso el desorden del codigo en la pagina del workspace.jsx. Aprendi que es muy importante planear bien las funcionalidades con anterioridad asi el codigo se mantiene mucho mas ordenado y legible. Muchas variables no tienen el nombre que tienen que tener pero me diverti y aprendi mucho con este proyecto. Lo mas importante es que funciona.
+Lo mas dificil fue hacer responsivo la pagina donde esta el workspace y poder ocultarlo y para cuando hay que desplegarlo se vea mas o menos decente. Eso fue lo que me llevo mas tiempo. Y que la pequeña flechita girara de forma suave para desplegar el menu de canales y que vuelva a su posision inicial.
+Muchas cosas fui agregando sin tenerlo planeado. Por eso el desorden del codigo en la pagina del workspace.jsx.
+Aprendi que es muy importante planear bien las funcionalidades con anterioridad asi el codigo se mantiene mucho mas ordenado y legible. Muchas variables no tienen el nombre que tienen que tener pero me diverti y aprendi mucho con este proyecto. Lo mas importante es que funciona.
 
 ## License
 
