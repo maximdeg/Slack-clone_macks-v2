@@ -12,7 +12,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     width: 27%;
 }
 
@@ -175,7 +174,7 @@
     }
 
     .header .right-half-container .navigation-container .search-container .search-input {
-        width: 280px;
+        width: 260px;
     }
 }
 
@@ -185,6 +184,10 @@
     }
 
     .header .right-half-container .navigation-container .search-container .search-input {
-        width: 180px;
+        width: 210px;
+    }
+
+    .header .empty-container span {
+        display: none;
     }
 }
