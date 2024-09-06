@@ -2,7 +2,7 @@
     "WORKSPACES": [
         {
             "id": "66c79856c0c790845523c954",
-            "workspace_name": "Q&A",
+            "workspace_name": "FRONTEND TEAM",
             "channels": [
                 {
                     "id": "66c79856db5c9a2531ba31f9",
@@ -40,7 +40,7 @@
                 },
                 {
                     "id": "66c79856757ead8b35fe9348",
-                    "channel_name": "Social",
+                    "channel_name": "HTML",
                     "messages": [
                         {
                             "id": "66c7985634334dcd030a921a",
@@ -88,7 +88,7 @@
                 },
                 {
                     "id": "66c79856f00a1845bf18b6d8",
-                    "channel_name": "Stock",
+                    "channel_name": "CSS",
                     "messages": [
                         {
                             "id": "66c798567fb8215e2e67b09b",
@@ -143,7 +143,7 @@
                 },
                 {
                     "id": "66c79856c80e5c02a4779cea",
-                    "channel_name": "Electricidad",
+                    "channel_name": "JavaScript",
                     "messages": [
                         {
                             "id": "66c7985635b00da128e81de9",
@@ -191,7 +191,7 @@
                 },
                 {
                     "id": "66c79856f95e0b1a03fd12f2",
-                    "channel_name": "Productos",
+                    "channel_name": "React",
                     "messages": [
                         {
                             "id": "66c798567263e1dfdc418106",
@@ -232,7 +232,7 @@
                 },
                 {
                     "id": "66c7985690881ec0cab3b9c7",
-                    "channel_name": "Tecnologico",
+                    "channel_name": "React Native",
                     "messages": [
                         {
                             "id": "66c7985667cadb7a71a3d637",
@@ -275,11 +275,11 @@
         },
         {
             "id": "66c79856f0cce3a53f745875",
-            "workspace_name": "Backend NodeJs",
+            "workspace_name": "BACKEND TEAM",
             "channels": [
                 {
                     "id": "66c7985663f43d3375bbff93",
-                    "channel_name": "General",
+                    "channel_name": "Python",
                     "messages": [
                         {
                             "id": "66c79856c1f9bddf7e9846ab",
@@ -327,7 +327,7 @@
                 },
                 {
                     "id": "66c79856f09e31111779e04d",
-                    "channel_name": "Sale Picada",
+                    "channel_name": "JAVA",
                     "messages": [
                         {
                             "id": "66c79856a9be4f8e2823e7dd",
@@ -361,7 +361,7 @@
                 },
                 {
                     "id": "66c79856e4ab2a4fecf486b8",
-                    "channel_name": "Stock",
+                    "channel_name": "PHP",
                     "messages": [
                         {
                             "id": "66c798567240ffba6f383f00",
@@ -395,7 +395,7 @@
                 },
                 {
                     "id": "66c79856f2cee2536ea4ad9a",
-                    "channel_name": "Canal Todos",
+                    "channel_name": "Ruby on Rails",
                     "messages": [
                         {
                             "id": "66c798569585ce41ee6bb67b",
@@ -436,7 +436,7 @@
                 },
                 {
                     "id": "66c798565294e497b53488ce",
-                    "channel_name": "Canal Compras",
+                    "channel_name": "Perl",
                     "messages": [
                         {
                             "id": "66c7985665033d426b33a9a5",
@@ -486,7 +486,7 @@
         },
         {
             "id": "66c7985642f98e5adc170644",
-            "workspace_name": "Frontend JavaScript",
+            "workspace_name": "Designers",
             "channels": [
                 {
                     "id": "66c7985679a2e66a7700e5aa",
@@ -531,7 +531,7 @@
                 },
                 {
                     "id": "66c79856d7c446ed9f41e425",
-                    "channel_name": "Canal Compras",
+                    "channel_name": "UX Team",
                     "messages": [
                         {
                             "id": "66c7985653b3d162bd648364",
@@ -565,7 +565,7 @@
                 },
                 {
                     "id": "66c798560dfd8b262e26ec4b",
-                    "channel_name": "Stock",
+                    "channel_name": "UI Team",
                     "messages": [
                         {
                             "id": "66c79856235e01bad3e1135c",
@@ -620,7 +620,7 @@
                 },
                 {
                     "id": "66c7985661e4ecd2710daa09",
-                    "channel_name": "Productos",
+                    "channel_name": "Adobe designers",
                     "messages": [
                         {
                             "id": "66c7985695c9077441267600",
@@ -654,7 +654,7 @@
                 },
                 {
                     "id": "66c7985603a2e97433c0bdc4",
-                    "channel_name": "Tecnologico",
+                    "channel_name": "Video making team",
                     "messages": [
                         {
                             "id": "66c798565cadd5c95d7c24f4",
@@ -704,7 +704,7 @@
         },
         {
             "id": "66c798566d34661c67c245f7",
-            "workspace_name": "Backend .Net",
+            "workspace_name": "Q&A",
             "channels": [
                 {
                     "id": "66c79857083da981e252593b",
@@ -749,7 +749,7 @@
                 },
                 {
                     "id": "66c79857f1673117ffa9ef3e",
-                    "channel_name": "Stock",
+                    "channel_name": "Presentadores",
                     "messages": [
                         {
                             "id": "66c79857cc7cb2e4b56c9d0b",
@@ -790,7 +790,7 @@
                 },
                 {
                     "id": "66c798578e1094e4649b1f09",
-                    "channel_name": "Canal Todos",
+                    "channel_name": "Organizadores",
                     "messages": [
                         {
                             "id": "66c79857ced4e7c070da4a76",
@@ -879,7 +879,7 @@
                 },
                 {
                     "id": "66c79857228b0bbb7ed1422a",
-                    "channel_name": "Libros JAVA",
+                    "channel_name": "Tech representative chat",
                     "messages": [
                         {
                             "id": "66c79857072944ee35c2f181",
@@ -920,7 +920,7 @@
                 },
                 {
                     "id": "66c798573f8f82a7f23b9537",
-                    "channel_name": "Libros de Cocina",
+                    "channel_name": "Sale fiesta?",
                     "messages": [
                         {
                             "id": "66c7985718878666f543969d",
@@ -961,7 +961,7 @@
                 },
                 {
                     "id": "66c79857aa4ecef885fe05cc",
-                    "channel_name": "Canal Compras",
+                    "channel_name": "Bizcochitos quien trae?",
                     "messages": [
                         {
                             "id": "66c79857da93566af212dbf0",
@@ -1011,7 +1011,7 @@
         },
         {
             "id": "66c798570fda5a529f2bfb43",
-            "workspace_name": "Fullstack React",
+            "workspace_name": "Marketing Group",
             "channels": [
                 {
                     "id": "66c79857bf7a8cd6d6500638",
@@ -1056,7 +1056,7 @@
                 },
                 {
                     "id": "66c79857f01bb520f7af56c8",
-                    "channel_name": "Ventas",
+                    "channel_name": "Social media",
                     "messages": [
                         {
                             "id": "66c798571ec3979256fda002",
@@ -1111,7 +1111,7 @@
                 },
                 {
                     "id": "66c798575cd26eee18da043e",
-                    "channel_name": "Libros Ciencia Ficcion",
+                    "channel_name": "Visual Marketing",
                     "messages": [
                         {
                             "id": "66c798572f8130d6fc492943",
@@ -1152,7 +1152,7 @@
                 },
                 {
                     "id": "66c798576efca6f78357a648",
-                    "channel_name": "Sale Picada",
+                    "channel_name": "Digital Marketing",
                     "messages": [
                         {
                             "id": "66c79857b503569afefc0290",
@@ -1186,7 +1186,7 @@
                 },
                 {
                     "id": "66c798571698ecd153ae2ab6",
-                    "channel_name": "Libros Programacion",
+                    "channel_name": "Pricing",
                     "messages": [
                         {
                             "id": "66c79857ad123349768f1f18",
@@ -1222,7 +1222,7 @@
         },
         {
             "id": "66c79857d5c97a1f7aa6f7db",
-            "workspace_name": "Colegio",
+            "workspace_name": "Recursos Humanos",
             "channels": [
                 {
                     "id": "66c798572ed5fa38cb5329bc",
@@ -1281,7 +1281,7 @@
                 },
                 {
                     "id": "66c798572a65762e19845926",
-                    "channel_name": "Libros Futuristicos",
+                    "channel_name": "Despidos",
                     "messages": [
                         {
                             "id": "66c798573cb748e6788dc324",
@@ -1322,7 +1322,7 @@
                 },
                 {
                     "id": "66c798577d8bdba25ce14156",
-                    "channel_name": "Stock Computadoras",
+                    "channel_name": "Contrataciones",
                     "messages": [
                         {
                             "id": "66c79857768cff59d4bcf29d",
@@ -1356,7 +1356,7 @@
                 },
                 {
                     "id": "66c798572dd02618d4d34396",
-                    "channel_name": "Libros Aventureros",
+                    "channel_name": "Acusaciones y reclamos",
                     "messages": [
                         {
                             "id": "66c79857ae0691fa3be1de13",
@@ -1390,7 +1390,7 @@
                 },
                 {
                     "id": "66c798573f25434840b06a3e",
-                    "channel_name": "Ventas",
+                    "channel_name": "Terapia intensiva",
                     "messages": [
                         {
                             "id": "66c79857059e8a4a40cf278d",
@@ -1431,7 +1431,7 @@
                 },
                 {
                     "id": "66c798575775032e1f9f3e43",
-                    "channel_name": "Stock",
+                    "channel_name": "Reuniones urgentes",
                     "messages": [
                         {
                             "id": "66c79857af17ddeb6be17ec6",
@@ -1467,7 +1467,7 @@
         },
         {
             "id": "66c79857b5d436b1341dbdb9",
-            "workspace_name": "Facultad",
+            "workspace_name": "Contabilidad y finanzas",
             "channels": [
                 {
                     "id": "66c798578762625f90912d9e",
@@ -1519,7 +1519,7 @@
                 },
                 {
                     "id": "66c798570c13eba5aa7e22a8",
-                    "channel_name": "Juegos",
+                    "channel_name": "Public practice",
                     "messages": [
                         {
                             "id": "66c798573da81f884dcac79b",
@@ -1553,7 +1553,7 @@
                 },
                 {
                     "id": "66c79857fc594951dedf4c67",
-                    "channel_name": "Libros Detectives",
+                    "channel_name": "Commerce and Industry",
                     "messages": [
                         {
                             "id": "66c79857d383763633b37eb5",
@@ -1601,7 +1601,7 @@
                 },
                 {
                     "id": "66c79857cf56eeb7e55bef7b",
-                    "channel_name": "Libros",
+                    "channel_name": "Education and Academy foundings",
                     "messages": [
                         {
                             "id": "66c7985758925b0df887d501",
@@ -1656,7 +1656,7 @@
                 },
                 {
                     "id": "66c79857b92a3a67ef197d4a",
-                    "channel_name": "Canal Todos",
+                    "channel_name": "Legal advices",
                     "messages": [
                         {
                             "id": "66c798579d3fc3e539a78029",
@@ -1690,7 +1690,7 @@
                 },
                 {
                     "id": "66c79857f4daa02cecc3d431",
-                    "channel_name": "Salidas laborales",
+                    "channel_name": "After party",
                     "messages": [
                         {
                             "id": "66c79857588a044664fe5ff3",
@@ -1738,7 +1738,7 @@
                 },
                 {
                     "id": "66c79857d93e3ba71356c086",
-                    "channel_name": "Canal Compras",
+                    "channel_name": "Viajes de negocios",
                     "messages": [
                         {
                             "id": "66c79857f491326edfe57df5",

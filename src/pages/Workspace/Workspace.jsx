@@ -97,12 +97,12 @@ function Workspace() {
 
     const handleDeleteChannel = (e, channel_id) => {
         e.preventDefault();
-        if (channels.length > 1) {
+        if (channel_id !== workspace.channels[0].id) {
             setNewChannel((prevState) => channels);
             deleteChannel(id_workspace, channel_id);
             navigate('/workspace/' + id_workspace + '/' + workspace.channels[0].id);
         } else {
-            alert('Por favor no elimine el ultimo canal');
+            alert('No se puede eliminar el canal General');
         }
     };
 
