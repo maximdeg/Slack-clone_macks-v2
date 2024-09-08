@@ -3,7 +3,17 @@ import React from 'react';
 import './MessageCard.css';
 
 function MessageCard({ message }) {
-    const time = message.date.split('').splice(11, 5).join('');
+    const date = new Date(Number(message.date));
+    const time =
+        `${date.getHours()}`.padStart(2, 0) +
+        ':' +
+        `${date.getMinutes()}`.padStart(2, 0) +
+        '        ' +
+        `${date.getDate()}`.padStart(2, 0) +
+        '/' +
+        `${date.getMonth() + 1}`.padStart(2, 0) +
+        '/' +
+        `${date.getFullYear()}`;
 
     return (
         <div className="message-card">

@@ -1,11 +1,11 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import MessageCard from '../MessageCard/MessageCard';
 
 import './MessageList.css';
 
 function MessageList({ messages }) {
     const messagesEndRef = useRef(messages);
-
+    
     useEffect(() => {
         if (messagesEndRef.current) {
             messagesEndRef.current.scrollTop = messagesEndRef.current.scrollHeight;

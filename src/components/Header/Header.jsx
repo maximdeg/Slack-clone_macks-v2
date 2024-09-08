@@ -7,7 +7,7 @@ import { RxQuestionMarkCircled } from 'react-icons/rx';
 
 import './Header.css';
 
-function Header({ workspace_name }) {
+function Header({ workspace_name, handleChangeSearchTerm }) {
     return (
         <>
             <header className="header">
@@ -53,7 +53,8 @@ function Header({ workspace_name }) {
                             <input
                                 className="input search-input"
                                 type="text"
-                                placeholder={`Buscar ${workspace_name}`}
+                                placeholder={`Buscar en ${workspace_name}`}
+                                onChange={handleChangeSearchTerm}
                             />
                             <LuSearch className="search-icon" />
                         </div>

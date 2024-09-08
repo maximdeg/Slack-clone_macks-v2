@@ -50,6 +50,26 @@ function Workspace() {
     const [isChannelMenuArrowActive, setIsChannelMenuArrowActive] = useState(false);
     const [isChannelMenuActive, setIsChannelMenuActive] = useState(false);
 
+    const [searchTerm, setSearchTerm] = useState('');
+    const handleChangeSearchTerm = (e) => {
+        setSearchTerm(e.target.value);
+    };
+
+    useEffect(() => {
+        const messages = currentChannel.messages;
+        if (searchTerm != '') {
+            const filteredMessages = messages.filter(
+                (message) =>
+                    message.message.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    message.username.toLowerCase().includes(searchTerm.toLowerCase())
+            );
+            setNewMessageList(filteredMessages);
+            console.log(searchTerm);
+        } else {
+            setNewMessageList(currentChannel.messages);
+        }
+    }, [searchTerm]);
+
     function handleToggleForm() {
         setIsCreateChannelButtonActive(!isCreateChannelButtonActive);
     }
@@ -75,8 +95,8 @@ function Workspace() {
     const handleSubmitMessage = (e, message) => {
         e.preventDefault();
         if (message.message !== '' && message.message !== undefined && message.message !== null) {
-            setNewMessageList([...newMessageList, message]);
             saveMessage(id_workspace, id_channel, message);
+            setNewMessageList([...newMessageList, message]);
         }
     };
 
@@ -108,7 +128,7 @@ function Workspace() {
 
     return (
         <>
-            <Header workspace_name={workspace.workspace_name} />
+            <Header workspace_name={workspace.workspace_name} handleChangeSearchTerm={handleChangeSearchTerm} />
             <section className="workspace-container">
                 <WorkspaceNavigator selected={id_workspace} />
                 <div className="main">
@@ -179,7 +199,7 @@ function Workspace() {
                                 </div>
                             )}
                         </div>
-                        <MessageList messages={currentChannel.messages} />
+                        <MessageList messages={newMessageList} />
                         <MessageInput handleSubmitMessage={handleSubmitMessage} />
                     </div>
                 </div>
@@ -237,7 +257,7 @@ function AddChannelForm({ handleSubmitChannel, handleToggleForm, error }) {
 function MessageInput({ handleSubmitMessage }) {
     const initialStateMessage = {
         id: uuid(),
-        date: new Date(),
+        date: new Date().getTime(),
         username: 'Maxim Degtiarev',
         image: '/users/user-0.jpg',
         message: '',
