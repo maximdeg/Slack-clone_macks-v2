@@ -199,7 +199,7 @@ function Workspace() {
                                 </div>
                             )}
                         </div>
-                        <MessageList messages={newMessageList} />
+                        <MessageList messages={currentChannel.messages} />
                         <MessageInput handleSubmitMessage={handleSubmitMessage} />
                     </div>
                 </div>
