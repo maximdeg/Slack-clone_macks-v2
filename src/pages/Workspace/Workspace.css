@@ -89,7 +89,6 @@
 }
 
 .btn-cancel {
-    /* box-shadow: inset 0px 0px 0px 3px rgba(255, 41, 41, 1); */
     background-color: var(--error-color);
 }
 
@@ -329,6 +328,45 @@
     border-radius: 5px;
     color: var(--text-secondary-color);
     background-color: var(--border-color);
+}
+
+/* REACT CONFIRM ALERT */
+
+.react-confirm-alert-overlay {
+    background: rgba(65, 65, 65, 0.727);
+}
+
+.react-confirm-alert-body {
+    font-family: var(--font-family);
+    background: var(--bg-secondary-color);
+    border-radius: 9px;
+    color: var(--text-secondary-color);
+}
+
+.react-confirm-alert-button-group {
+    justify-content: flex-end;
+}
+
+.react-confirm-alert-button-group > button {
+    font-size: 16px;
+    color: var(--text-secondary-color);
+    padding: 10px 20px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--bg-tertiary-color);
+}
+
+.react-confirm-alert-button-group > button:first-child {
+    background-color: var(--error-color);
+}
+
+.react-confirm-alert-button-group > button:hover {
+    box-shadow: 0px 0px 0px 1px var(--icon-color);
+    background-color: var(--bg-secondary-color);
 }
 
 /* MEDIAQUERIES */

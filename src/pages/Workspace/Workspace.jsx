@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { v4 as uuid } from 'uuid';
 import { useParams, useNavigate } from 'react-router-dom';
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css react-confirm-alert
 import { useGlobalContext } from '../../context/GlobalContext';
 import { IoSend, IoMicOutline } from 'react-icons/io5';
 import { GoTriangleRight, GoBold, GoItalic, GoListUnordered, GoPlusCircle } from 'react-icons/go';
@@ -115,14 +117,36 @@ function Workspace() {
         }
     };
 
-    const handleDeleteChannel = (e, channel_id) => {
+    const handleDeleteChannel = (e, channel_id, channel_name) => {
         e.preventDefault();
         if (channel_id !== workspace.channels[0].id) {
-            setNewChannel((prevState) => channels);
-            deleteChannel(id_workspace, channel_id);
-            navigate('/workspace/' + id_workspace + '/' + workspace.channels[0].id);
+            confirmAlert({
+                title: 'DELETE CHANNEL',
+                message: `Are you sure you want to delete the channel "${channel_name}"?`,
+                buttons: [
+                    {
+                        label: 'Cancel',
+                    },
+                    {
+                        label: 'Confirm',
+                        onClick: () => {
+                            setNewChannel((prevState) => channels);
+                            deleteChannel(id_workspace, channel_id);
+                            navigate('/workspace/' + id_workspace + '/' + workspace.channels[0].id);
+                        },
+                    },
+                ],
+            });
         } else {
-            alert('No se puede eliminar el canal General');
+            confirmAlert({
+                title: 'PERMISSION DENIED',
+                message: `You can't delete the default "${channel_name}" channel`,
+                buttons: [
+                    {
+                        label: 'OK',
+                    },
+                ],
+            });
         }
     };
 

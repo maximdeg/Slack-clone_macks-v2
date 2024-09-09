@@ -19,7 +19,10 @@ function ChannelList({ id_workspace, channels, handleDeleteChannel }) {
                         className={channel.id === id_channel ? 'channel selected' : 'channel'}
                     >
                         {`# ${channel.channel_name}`}
-                        <button className="btn-delete-channel" onClick={(e) => handleDeleteChannel(e, channel.id)}>
+                        <button
+                            className="btn-delete-channel"
+                            onClick={(e) => handleDeleteChannel(e, channel.id, channel.channel_name)}
+                        >
                             <ImBin2 />
                         </button>
                     </div>
