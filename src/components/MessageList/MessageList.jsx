@@ -1,9 +1,9 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import MessageCard from '../MessageCard/MessageCard';
 
 import './MessageList.css';
 
-function MessageList({ messages}) {
+function MessageList({ messages }) {
     const messagesEndRef = useRef(messages);
 
     useEffect(() => {
@@ -13,16 +13,14 @@ function MessageList({ messages}) {
     }, [messages]);
 
     return (
-        <>
-            <div className="message-list-container" ref={messagesEndRef}>
-                {messages.map((message, index) => (
-                    <div key={index}>
-                        <MessageCard message={message} />
-                    </div>
-                ))}
-                <div ref={messagesEndRef}></div>
-            </div>
-        </>
+        <div className="message-list-container" ref={messagesEndRef}>
+            {messages.map((message, index) => (
+                <div key={index}>
+                    <MessageCard message={message} index={index} />
+                </div>
+            ))}
+            <div ref={messagesEndRef}></div>
+        </div>
     );
 }
 
