@@ -3,8 +3,13 @@ import React from 'react';
 import './MessageCard.css';
 
 function MessageCard({ message }) {
-    const date = new Date(message.date * 1);
-    const time = `${date.getHours()}`.padStart(2, 0) + ':' + `${date.getMinutes()}`.padStart(2, 0);
+    const miliseconds = message.date * 1;
+    const date = new Date(miliseconds);
+    const hoursString = `${date.getHours()}`;
+    const hours = hoursString.padStart(2, 0);
+    const minutesString = `${date.getMinutes()}`;
+    const minutes = minutesString.padStart(2, 0);
+    const time = hours + ':' + minutes;
 
     return (
         <div className="message-card">
