@@ -40,8 +40,8 @@ function Workspace() {
     const navigate = useNavigate();
 
     const [currentChannel] = getChannelById(id_workspace, id_channel);
-    const initialStateMessageList = getMessagesFromChannel(id_workspace, id_channel);
-    const [newMessageList, setNewMessageList] = useState(initialStateMessageList);
+    // const initialStateMessageList = getMessagesFromChannel(id_workspace, id_channel);
+    const [newMessageList, setNewMessageList] = useState(currentChannel.messages);
     const [newChannel, setNewChannel] = useState('');
 
     const [error, setError] = useState(null);
@@ -58,19 +58,21 @@ function Workspace() {
     };
 
     useEffect(() => {
-        const messages = currentChannel.messages;
         if (searchTerm != '') {
-            const filteredMessages = messages.filter(
+            const filteredMessages = currentChannel.messages.filter(
                 (message) =>
                     message.message.toLowerCase().includes(searchTerm.toLowerCase()) ||
                     message.username.toLowerCase().includes(searchTerm.toLowerCase())
             );
             setNewMessageList(filteredMessages);
-            console.log(searchTerm);
         } else {
             setNewMessageList(currentChannel.messages);
         }
     }, [searchTerm]);
+
+    useEffect(() => {
+        setNewMessageList(currentChannel.messages);
+    }, [id_channel]);
 
     function handleToggleForm() {
         setIsCreateChannelButtonActive(!isCreateChannelButtonActive);
@@ -223,7 +225,7 @@ function Workspace() {
                                 </div>
                             )}
                         </div>
-                        <MessageList messages={currentChannel.messages} />
+                        <MessageList messages={newMessageList} />
                         <MessageInput handleSubmitMessage={handleSubmitMessage} />
                     </div>
                 </div>

@@ -3,9 +3,9 @@ import MessageCard from '../MessageCard/MessageCard';
 
 import './MessageList.css';
 
-function MessageList({ messages }) {
+function MessageList({ messages}) {
     const messagesEndRef = useRef(messages);
-    
+
     useEffect(() => {
         if (messagesEndRef.current) {
             messagesEndRef.current.scrollTop = messagesEndRef.current.scrollHeight;
