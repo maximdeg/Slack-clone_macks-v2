@@ -86,7 +86,7 @@
     border-radius: 5px;
     cursor: pointer;
     background-color: var(--bg-tertiary-color);
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .btn-cancel {
@@ -105,8 +105,8 @@
     background-color: var(--bg-secondary-color);
 }
 
-.button:focus {
-    transform: scale(0.98);
+.button:active {
+    transform: scale(0.9);
 }
 
 /* CREATE CHANNEL CONTAINER FORM */

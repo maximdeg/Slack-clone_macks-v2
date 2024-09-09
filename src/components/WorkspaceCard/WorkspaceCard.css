@@ -23,6 +23,10 @@
     transform: scale(1.02);
 }
 
+.workspace-card-container:active {
+    transform: scale(0.99);
+}
+
 .workspace-card-container .workspace-name-container {
     display: flex;
     padding: 0px 10px 0px 10px;
