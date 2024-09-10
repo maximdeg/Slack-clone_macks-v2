@@ -79,14 +79,6 @@
     transform: scale(1.1);
 }
 
-.workspace-squares:hover .hidden-container {
-    display: block;
-    position: absolute;
-    z-index: 10;
-    bottom: calc(18% -20);
-    left: 40px;
-}
-
 .workspace-squares.selected {
     background-color: var(--icon-color);
     transform: scale(1.2);
