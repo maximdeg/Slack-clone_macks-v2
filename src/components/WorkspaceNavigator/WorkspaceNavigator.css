@@ -79,6 +79,13 @@
     transform: scale(1.1);
 }
 
+/* .workspace-squares:hover .hidden-container {
+    display: block;
+    bottom: calc(18% -20);
+    left: 40px;
+    z-index: 10;
+} */
+
 .workspace-squares.selected {
     background-color: var(--icon-color);
     transform: scale(1.2);
@@ -86,6 +93,12 @@
 
 .link {
     text-decoration: none;
+}
+
+.workspaces-navigator .user-container .plus-icon-container:hover .hidden-container {
+    display: block;
+    bottom: calc(18% -20);
+    left: 40px;
 }
 
 @media screen and (max-width: 1200px) {
