@@ -22,9 +22,6 @@ function WorkspaceNavigator({ selected, isResponsive }) {
                         {workspace.workspace_name.split(' ')[1] &&
                             workspace.workspace_name.split(' ')[1][0].toUpperCase()}
                     </span>
-                    <div className="hidden-container ">
-                        <span className="hidden-span">Crear Workspace</span>
-                    </div>
                 </div>
             </Link>
         );
